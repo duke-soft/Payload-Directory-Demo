@@ -1,5 +1,15 @@
 import { CollectionConfig } from "payload/types";
 
+/**
+ * Businesses collection:
+ * - Name: text
+ * - Type: text
+ * - Website: text
+ * - Phone: number
+ * - Email: email
+ * - Description: rich text
+ * - Logo: file upload
+ */
 export const Businesses: CollectionConfig = {
     slug: 'businesses',
     fields: [
@@ -41,6 +51,8 @@ export const Businesses: CollectionConfig = {
         {
             name: 'logo',
             type: 'upload',
+            // Uploaded file information will be stored in collection with
+            // slug 'media'
             relationTo: 'media',
             required: true
         }

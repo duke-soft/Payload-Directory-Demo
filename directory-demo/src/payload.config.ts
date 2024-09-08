@@ -11,11 +11,14 @@ import { Businesses } from './collections/Businesses'
 import { Media } from './collections/Media'
 
 export default buildConfig({
+  // Configure admin portal to use the Users collection for login info
+  // (inserted automatically by template)
   admin: {
     user: Users.slug,
     bundler: webpackBundler(),
   },
   editor: slateEditor({}),
+  // Configure Payload to use Users, Businesses, and Media collections
   collections: [Users, Businesses, Media],
   typescript: {
     outputFile: path.resolve(__dirname, 'payload-types.ts'),
