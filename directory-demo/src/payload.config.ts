@@ -9,6 +9,7 @@ import { buildConfig } from 'payload/config'
 import Users from './collections/Users'
 import { Businesses } from './collections/Businesses'
 import { Media } from './collections/Media'
+import { RFPs } from './collections/RFPs'
 
 export default buildConfig({
   // Configure admin portal to use the Users collection for login info
@@ -19,7 +20,7 @@ export default buildConfig({
   },
   editor: slateEditor({}),
   // Configure Payload to use Users, Businesses, and Media collections
-  collections: [Users, Businesses, Media],
+  collections: [Users, Businesses, Media, RFPs],
   typescript: {
     outputFile: path.resolve(__dirname, 'payload-types.ts'),
   },
